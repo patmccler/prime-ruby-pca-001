@@ -8,11 +8,9 @@ def prime? number
   factors = (2..half_num)
   count = 2
 
-  ## Was building an array of numbers to try
-  ## for numbers like "1000000000" it was taking 10 seconds to build the array
-  ## changed to range, now its instant (cause its div by zero)
+  # if count is in the range of numbers to try
   while factors === count
-
+    # return false if anything is an even division
     if number % count == 0
       puts "Divisible by #{count}"
       return false
@@ -20,6 +18,7 @@ def prime? number
     count += 1
   end
 
+  # no numbers had no remainer, its prime
   true
 end
 
@@ -33,3 +32,8 @@ def prime_report num
   val = prime? num
   puts val
 end
+
+
+  ## Was building an array of numbers to try
+  ## for numbers like "1000000000" it was taking 10 seconds to build the array
+  ## changed to range, now its instant (cause its div by zero2)
